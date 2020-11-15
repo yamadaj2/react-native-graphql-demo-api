@@ -1,7 +1,7 @@
 const {User} = require('../../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-require('custom-env').env()
+require('custom-env').env();
 const {APP_SECRET} = process.env;
 
 const invalidCredentialsError = () => {
@@ -31,7 +31,6 @@ const auth = {
   async signIn(_, {username, email, password}) {
     try {
       if (username || email) {
-        // const user = username ? await User.findOne({ where: {username}}) : await User.findOne({where: {email}})
         const user = await User.findOne({ where: username ? {username} : {email}})
         if (await bcrypt.compare(password, user.dataValues.password_digest)) {
           const payload = {

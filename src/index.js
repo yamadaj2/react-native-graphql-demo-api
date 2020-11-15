@@ -65,9 +65,9 @@ const apolloServer = new ApolloServer({
 
 const app = express();
 const server = createServer(app);
-apolloServer.applyMiddleware({app})
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
+apolloServer.applyMiddleware({ app });
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(cors());
 
-server.listen({port}, () => console.log(`server is running at http://localhost:${port}`))
+server.listen({port}, () => console.log(`Server is running at http://localhost:${port}/graphql`))
