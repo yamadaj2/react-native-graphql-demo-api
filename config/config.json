@@ -8,7 +8,6 @@
     "dialect": "postgres"
   },
   "production": {
-//    "use_env_variable": "DATABASE_URL",
     "database": "movies_api_production",
     "dialect": "postgres",
     "dialectOptions": {
