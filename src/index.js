@@ -6,8 +6,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const resolvers = require('../resolvers');
 
-// const { User, Movie, Vote, sequelize } = require('../models');
-
 const port = process.env.PORT || 4000;
 
 const typeDefs = gql`
