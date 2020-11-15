@@ -36,5 +36,5 @@ module.exports = {
       }
     });
   },
-  down: queryInterface => queryInterface.dropTable('Votes');
+  down: queryInterface => queryInterface.dropTable('Votes')
 };
