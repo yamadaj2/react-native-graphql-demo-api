@@ -65,7 +65,13 @@ const apolloServer = new ApolloServer({
 
 const app = express();
 const server = createServer(app);
-apolloServer.applyMiddleware({ app });
+apolloServer.applyMiddleware({
+    app,
+    cors: {
+        credentials: true,
+        origin: true
+    },
+});
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
