@@ -14,7 +14,10 @@ const vote = {
           }
         ]
       });
-      if (user && user.votes.find(vote => vote?.movieId == movieId)) throw new Error('Cannot vote twice');
+      if (user && user.votes.find(vote => vote?.movieId == movieId)) {
+        throw new Error('Cannot vote twice');
+        return
+      }
 
       const newVote = await Vote.create({userId, movieId});
       return newVote.id
