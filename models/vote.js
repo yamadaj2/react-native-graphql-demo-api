@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
     movieId: DataTypes.INTEGER
   }, {});
   Vote.associate = function(models) {
-    // associations can be defined here
     Vote.belongsTo(models.User, {
       foreignKey: 'userId',
       onDelete: 'CASCADE',
